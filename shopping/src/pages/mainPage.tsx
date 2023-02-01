@@ -1,9 +1,9 @@
-import Counter from "../components/counter";
+import CountersList from "../components/countersList";
 
 function MainPage() {
   return (
     <main>
-      <Counter />
+      <CountersList />
     </main>
   );
 }
