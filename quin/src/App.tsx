@@ -1,9 +1,28 @@
+import { useState } from "react";
+import SearchStatus from "./components/searchStatus";
 import UsersList from "./components/users";
+import api from "./entities/api";
 
 function App() {
+  const [users, setUsers] = useState(api.getUsers());
+  const handleDelete = (id: string) => {
+    setUsers(users.filter((user) => user._id !== id));
+  };
+  const handleToggleBookMark = (id: string) => {
+    setUsers(
+      users.map((user) =>
+        user._id === id ? { ...user, bookmark: !user.bookmark } : user
+      )
+    );
+  };
   return (
-    <div className="App">
-      <UsersList />
+    <div>
+      <SearchStatus length={users.length} />
+      <UsersList
+        users={users}
+        onDelete={handleDelete}
+        onToggleBookMark={handleToggleBookMark}
+      />
     </div>
   );
 }
