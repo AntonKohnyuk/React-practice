@@ -11,16 +11,16 @@ interface UsersProps
     >,
     React.AriaAttributes {
   users: User[];
-  onDelete(id: string): void;
-  onToggleBookMark(id: string): void;
+  onDelete: (id: string) => void;
+  onToggleBookMark: (id: string) => void;
 }
 
-const UsersList = ({ users, ...rest }: UsersProps) => {
+const UsersList = ({ users, ...rest }: UsersProps): JSX.Element => {
   const count = users.length;
   const pageSize = 4;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const handlePageChange = (pageIndex: number) => {
+  const handlePageChange = (pageIndex: number): void => {
     setCurrentPage(pageIndex);
   };
 

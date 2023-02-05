@@ -10,7 +10,7 @@ interface BookMarkProps
   status: boolean;
 }
 
-const BookMark = ({ status, ...rest }: BookMarkProps) => {
+const BookMark = ({ status, ...rest }: BookMarkProps): JSX.Element => {
   return (
     <button {...rest}>{status ? <TurnedInIcon /> : <TurnedInNotIcon />}</button>
   );

@@ -12,12 +12,12 @@ interface UserProps
   _id: string;
   name: string;
   profession: Profession;
-  qualities: Array<Trait>;
+  qualities: Trait[];
   completedMeetings: number;
   rate: number;
   bookmark: boolean;
-  onDelete(id: string): void;
-  onToggleBookMark(id: string): void;
+  onDelete: (id: string) => void;
+  onToggleBookMark: (id: string) => void;
 }
 
 const UserComponent = ({
@@ -30,7 +30,7 @@ const UserComponent = ({
   bookmark,
   onDelete,
   onToggleBookMark,
-}: UserProps) => {
+}: UserProps): JSX.Element => {
   return (
     <tr>
       <td>{name}</td>
@@ -43,10 +43,20 @@ const UserComponent = ({
       <td>{completedMeetings}</td>
       <td>{rate}</td>
       <td>
-        <BookMark status={bookmark} onClick={() => onToggleBookMark(_id)} />
+        <BookMark
+          status={bookmark}
+          onClick={() => {
+            onToggleBookMark(_id);
+          }}
+        />
       </td>
       <td>
-        <button className="btn btn-danger" onClick={() => onDelete(_id)}>
+        <button
+          className="btn btn-danger"
+          onClick={() => {
+            onDelete(_id);
+          }}
+        >
           <DeleteIcon sx={{ color: "white" }} />
         </button>
       </td>

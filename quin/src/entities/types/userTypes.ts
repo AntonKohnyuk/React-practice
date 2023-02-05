@@ -2,7 +2,7 @@ export interface User {
   _id: string;
   name: string;
   profession: Profession;
-  qualities: Array<Trait>;
+  qualities: Trait[];
   completedMeetings: number;
   rate: number;
   bookmark: boolean;

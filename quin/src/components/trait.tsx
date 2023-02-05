@@ -3,7 +3,7 @@ interface TraitProps {
   name: string;
 }
 
-const TraitBadge = ({ color, name }: TraitProps) => {
+const TraitBadge = ({ color, name }: TraitProps): JSX.Element => {
   return <span className={`badge m-1 bg-${color}`}>{name}</span>;
 };
 
