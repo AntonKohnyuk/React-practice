@@ -1,5 +1,4 @@
 import { useState } from "react";
-import SearchStatus from "./components/searchStatus";
 import UsersList from "./components/users";
 import api from "./entities/api";
 
@@ -17,7 +16,6 @@ function App(): JSX.Element {
   };
   return (
     <div>
-      <SearchStatus length={users.length} />
       <UsersList
         users={users}
         onDelete={handleDelete}

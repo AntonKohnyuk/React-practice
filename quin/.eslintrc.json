@@ -20,8 +20,16 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "quotes": ["error", "double", { "avoidEscape": true }],
-    "@typescript-eslint/quotes": ["error", "double", { "avoidEscape": true }],
+    "quotes": [
+      "error",
+      "double",
+      { "allowTemplateLiterals": true, "avoidEscape": true }
+    ],
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      { "allowTemplateLiterals": true, "avoidEscape": true }
+    ],
     "semi": "off",
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/consistent-indexed-object-style": [
@@ -31,6 +39,7 @@
     "@typescript-eslint/consistent-type-imports": "warn",
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
-    "endOfLine": "off"
+    "endOfLine": "off",
+    "@typescript-eslint/no-floating-promises": "off"
   }
 }
